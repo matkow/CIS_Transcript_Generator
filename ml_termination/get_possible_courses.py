@@ -128,7 +128,6 @@ def get_course_list(course_file):
 
         course_list = []
         name_list = []
-        credit_list = []
         prereq_list = []
         course_count = 0
         with open(course_file) as csvfile:
@@ -138,23 +137,20 @@ def get_course_list(course_file):
                         if row_count > 0 and readable_row(row):
                                 course_name = row[0] + row[1]
                                 name_list.append(course_name)
-
-                                credit_list.append(float(row[3]))
-
                                 course_reqs = clean(row[7])
                                 course_reqs = create_reqs_list(course_reqs)
                                 prereq_list.append(course_reqs)
-
                                 course_count += 1
                         row_count += 1
                 course_list.append(name_list)
-                course_list.append(credit_list)
                 course_list.append(prereq_list)
+
         return course_list
 
 
 # Give this function a list of courses that the student has completed in the same format as courses_taken
 # It will return a list in the same format of all the possible courses the student can take
+# You must change the course_file at the top to the path of you local copy of courses.csv
 def get_possible_courses(completed_courses):
         courses_taken = ["MATH0701", "MATH1021", "MATH1022", "MATH1031", "MATH1039"]
         courses_taken += completed_courses
@@ -162,10 +158,9 @@ def get_possible_courses(completed_courses):
         possible_courses = []
 
         for i in range(0, len(course_list[0])):
-                if are_prereqs_satisfied(courses_taken, course_list[2][i]):
+                if are_prereqs_satisfied(courses_taken, course_list[1][i]):
                         possible_courses.append(course_list[0][i])
 
         print(possible_courses)
 
         return possible_courses
-
