@@ -331,7 +331,7 @@ def get_possible_courses(completed_courses):
                                  "PHYS1962",
                                  "PHYS2021", "PHYS2921", "PHYS2022", "PHYS2922"]
 
-        courses_taken = ["MATH0701", "MATH1021", "MATH1022", "MATH1031", "MATH1039", "CIS1968"]
+        courses_taken = ["MATH0701", "MATH1021", "MATH1022", "MATH1031", "MATH1039"]
         courses_taken += completed_courses
         course_list = get_course_list(course_file)
         possible_courses = []
