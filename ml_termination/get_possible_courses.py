@@ -339,9 +339,8 @@ def get_possible_courses(completed_courses):
         for i in range(0, len(course_list[0])):
                 if are_prereqs_satisfied(courses_taken, course_list[1][i]):
                         if duplicate_course_list.__contains__(course_list[0][i]):
-                                if contains_equivalent_class(course_list[0][i], courses_taken):
-                                        if not contains_equivalent_class(course_list[0][i]):
-                                                possible_courses.append(course_list[0][i])
+                                if not contains_equivalent_class(course_list[0][i]):
+                                        possible_courses.append(course_list[0][i])
                         else:
                                 possible_courses.append(course_list[0][i])
 
