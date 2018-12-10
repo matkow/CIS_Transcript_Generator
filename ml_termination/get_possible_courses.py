@@ -148,6 +148,175 @@ def get_course_list(course_file):
         return course_list
 
 
+def remove_equivalent_class(course_added, completed_courses):
+        if course_added == "CIS1068":
+                if completed_courses.__contains__("CIS1968"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1968":
+                if completed_courses.__contains__("CIS1068"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1166":
+                if completed_courses.__contains__("CIS1966"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1966":
+                if completed_courses.__contains__("CIS1166"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1041":
+                if completed_courses.__contains__("CIS1941"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1941":
+                if completed_courses.__contains__("CIS1041"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1042":
+                if completed_courses.__contains__("CIS1942"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CIS1942":
+                if completed_courses.__contains__("CIS1042"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "BIOL1111":
+                if completed_courses.__contains__("BIOL1911"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "BIOL1911":
+                if completed_courses.__contains__("BIOL1111"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "BIOL2112":
+                if completed_courses.__contains__("BIOL2912"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "BIOL2912":
+                if completed_courses.__contains__("BIOL2112"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1031":
+                if completed_courses.__contains__("CHEM1951"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1951":
+                if completed_courses.__contains__("CHEM1031"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1033":
+                if completed_courses.__contains__("CHEM1953"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1953":
+                if completed_courses.__contains__("CHEM1033"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1032":
+                if completed_courses.__contains__("CHEM1952"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1952":
+                if completed_courses.__contains__("CHEM1032"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1034":
+                if completed_courses.__contains__("CHEM1954"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "CHEM1954":
+                if completed_courses.__contains__("CHEM1034"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS1061":
+                if completed_courses.__contains__("PHYS1961"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS1961":
+                if completed_courses.__contains__("PHYS1061"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS1062":
+                if completed_courses.__contains__("PHYS1962"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS1962":
+                if completed_courses.__contains__("PHYS1062"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS2021":
+                if completed_courses.__contains__("PHYS2921"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS2921":
+                if completed_courses.__contains__("PHYS2021"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS2022":
+                if completed_courses.__contains__("PHYS2922"):
+                        return False
+                else:
+                        return True
+
+        elif course_added == "PHYS2922":
+                if completed_courses.__contains__("PHYS2022"):
+                        return False
+                else:
+                        return True
+
 # Give this function a list of courses that the student has completed in the same format as courses_taken
 # It will return a list in the same format of all the possible courses the student can take
 # You must change the course_file at the top to the path of you local copy of courses.csv
@@ -163,3 +332,9 @@ def get_possible_courses(completed_courses):
                         possible_courses.append(course_list[0][i])
 
         return possible_courses
+
+
+print(len(get_possible_courses(['CIS4398'])))
+
+courses_taken = ["MATH0701", "MATH1021", "MATH1022", "MATH1031", "MATH1039"]
+remove_equivalent_class("CIS1068", courses_taken)
